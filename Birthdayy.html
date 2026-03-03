@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Bbygurl ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ffe4ec);
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.page {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.active {
+    display: block;
+}
+
+/* Fonts */
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #d63384;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #b30059;
+    font-size: 28px;
+}
+
+p {
+    color: #660033;
+    font-weight: 500;
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    margin: 15px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.yes-btn {
+    background: #ff0066;
+    color: white;
+}
+
+.no-btn {
+    background: white;
+    color: #ff0066;
+    border: 2px solid #ff0066;
+}
+
+/* Stickers */
+.sticker, .bday {
+    position: fixed;
+    font-size: 32px;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.cat1 { top: 10%; left: 5%; }
+.cat2 { top: 75%; right: 8%; }
+.cat3 { bottom: 10%; left: 15%; }
+.cat4 { top: 40%; right: 15%; }
+
+.b1 { top: 15%; right: 5%; }
+.b2 { top: 60%; left: 8%; }
+.b3 { bottom: 20%; right: 15%; }
+.b4 { top: 30%; left: 20%; }
+.b5 { bottom: 10%; left: 30%; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Cake */
+.cake {
+    font-size: 90px;
+    animation: bounceCake 1.5s infinite;
+    margin: 20px 0;
+}
+
+@keyframes bounceCake {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Letter */
+.letter-container {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.letter-paper {
+    background: white;
+    width: 300px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    font-family: 'Playfair Display', serif;
+    color: #99004d;
+}
+
+/* Input */
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #ff0066;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+/* Confetti */
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Cat Stickers -->
+<div class="sticker cat1">🐱</div>
+<div class="sticker cat2">😺</div>
+<div class="sticker cat3">🐾</div>
+<div class="sticker cat4">🎀🐱</div>
+
+<!-- Birthday Stickers -->
+<div class="bday b1">🎂</div>
+<div class="bday b2">🎈</div>
+<div class="bday b3">🎁</div>
+<div class="bday b4">🎉</div>
+<div class="bday b5">🧁</div>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+    <h1>Hey bbygurl 💕</h1>
+    <p>I made something for you… do you want to see it?</p>
+    <button class="yes-btn" onclick="nextPage(2)">YES 🥺</button>
+    <button class="no-btn" onclick="nextPage(3)">NO 😒</button>
+</div>
+
+<!-- PAGE 2 PASSWORD -->
+<div id="page2" class="page">
+    <h2>Password Required 🔐</h2>
+    <p>When one says <b>sachi</b>, the other says?</p>
+    <input type="password" id="password" placeholder="Enter password">
+    <br>
+    <button class="yes-btn" onclick="checkPassword()">UNLOCK 💖</button>
+    <p id="wrong" class="hidden">Wrong answer 😏 try again</p>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <h2>HOW DARE YOU 😡</h2>
+    <p><b>Click below</b> and behave 😤</p>
+    <button class="yes-btn" onclick="nextPage(1)">GO BACK</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+    <h1>Happy Birthday Bestuu!! 🎂</h1>
+    <div class="cake">🎂</div>
+    <p>You are my bestest friend 💗</p>
+    <button class="yes-btn" onclick="nextPage(5)"><b>CLICK NEXT</b></button>
+</div>
+
+<!-- PAGE 5 LETTER -->
+<div id="page5" class="page">
+    <h2>Your Letter 💌</h2>
+    <button id="openBtn" class="yes-btn" onclick="openLetter()">
+        <b>TAP TO OPEN</b>
+    </button>
+
+    <div id="letter" class="letter-container hidden">
+        <div class="letter-paper">
+            Dear bbygurl 💕 <br><br>
+            Thank you for being my safe place.  
+            Thank you for staying.  
+            And remember…  
+            whenever one says <b>sachi</b>  
+            the other must say <b>muchi</b> 😌💗  
+            <br><br>
+            Always yours,  
+            <b>Kavu 🎀</b>
+        </div>
+        <br>
+        <button class="yes-btn" onclick="nextPage(6)"><b>CLICK HERE 📸</b></button>
+    </div>
+</div>
+
+<!-- PAGE 6 GALLERY -->
+<div id="page6" class="page">
+    <h2>Our Memories 📸</h2>
+   
+    <img src="C:\Users\KAVYA AGARWAL\Desktop\WhatsApp Image 2026-03-03 at 3.04.20 PM (1).jpeg">
+    <img src="C:\Users\KAVYA AGARWAL\Desktop\WhatsApp Image 2026-03-03 at 3.04.20 PM (2).jpeg">
+    <img src="C:\Users\KAVYA AGARWAL\Desktop\WhatsApp Image 2026-03-03 at 3.04.20 PM.jpeg">
+    <br>
+    <button class="yes-btn" onclick="nextPage(7)"><b>NEXT 🎁</b></button>
+</div>
+
+<!-- PAGE 7 SURPRISE -->
+<div id="page7" class="page">
+    <h2>Here is your Surprise 🎁</h2>
+    <button class="yes-btn" onclick="showSurprise()"><b>OPEN SURPRISE</b></button>
+    <p id="surprise" class="hidden" style="font-family:Pacifico; font-size:26px; color:#cc0066;">
+       Lifetime subscription to Kavu’s support system 💙  
+<br><br>
+       Valid forever.❤️
+    </p>
+</div>
+
+<script>
+
+function nextPage(pageNumber) {
+    let pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById('page' + pageNumber).classList.add('active');
+}
+
+function checkPassword() {
+    let pass = document.getElementById("password").value.toLowerCase();
+    if(pass === "muchi") {
+        nextPage(4);
+    } else {
+        document.getElementById("wrong").classList.remove("hidden");
+    }
+}
+
+function openLetter() {
+    document.getElementById("letter").classList.remove("hidden");
+    document.getElementById("openBtn").style.display = "none";
+}
+
+function showSurprise() {
+    document.getElementById("surprise").classList.remove("hidden");
+
+    for (let i = 0; i < 20; i++) {
+        let confetti = document.createElement("div");
+        confetti.innerHTML = "🎉";
+        confetti.style.position = "fixed";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.top = "-20px";
+        confetti.style.fontSize = "24px";
+        confetti.style.animation = "fall 3s linear forwards";
+        document.body.appendChild(confetti);
+    }
+}
+
+</script>
+
+</body>
+</html>
